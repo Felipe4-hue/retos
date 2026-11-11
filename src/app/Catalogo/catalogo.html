@@ -1,0 +1,27 @@
+<div class="contenedor">
+
+  <h1>Catálogo de productos</h1>
+
+  <div class="productos">
+
+    @for (producto of productos; track producto.nombre) {
+      <div class="producto">
+
+        <h2>{{ producto.nombre }}</h2>
+
+        <p>Categoría: {{ producto.categoria }}</p>
+
+        <p>Precio: {{ producto.precio }}</p>
+
+        @if (producto.precio > 100000) {
+          <span class="costoso">Producto costoso</span>
+        } @else {
+          <span class="economico">Precio económico</span>
+        }
+
+      </div>
+    }
+
+  </div>
+
+</div>

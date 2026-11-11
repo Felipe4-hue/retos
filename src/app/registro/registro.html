@@ -1,0 +1,55 @@
+<div class="contenedor">
+
+  <h1>Registro de estudiantes</h1>
+
+  <div class="formulario">
+
+    <label>Nombre:</label>
+    <input
+      type="text"
+      [(ngModel)]="nombre"
+      placeholder="Ingrese su nombre">
+
+    <label>Programa:</label>
+    <input
+      type="text"
+      [(ngModel)]="programa"
+      placeholder="Ingrese su programa">
+
+    <label>Edad:</label>
+    <input
+      type="number"
+      [(ngModel)]="edad"
+      placeholder="Ingrese su edad">
+
+    <button (click)="registrar()">Registrar</button>
+
+    <p class="mensaje">{{ mensaje }}</p>
+
+  </div>
+
+  <h2>Lista de estudiantes</h2>
+
+  <div class="lista">
+
+    @for (estudiante of estudiantes; track $index) {
+
+      <div class="estudiante">
+
+        <h3>{{ estudiante.nombre }}</h3>
+
+        <p>Programa: {{ estudiante.programa }}</p>
+
+        <p>Edad: {{ estudiante.edad }} años</p>
+
+      </div>
+
+    } @empty {
+
+      <p class="vacio">No hay estudiantes registrados</p>
+
+    }
+
+  </div>
+
+</div>

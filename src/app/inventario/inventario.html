@@ -1,0 +1,68 @@
+<div class="contenedor">
+
+  <h1>Control de inventario</h1>
+
+  <div class="formulario">
+
+    <h2>Registrar producto</h2>
+
+    <label>Nombre del producto:</label>
+    <input
+      type="text"
+      [(ngModel)]="nombre"
+      placeholder="Ingrese el nombre">
+
+    <label>Cantidad:</label>
+    <input
+      type="number"
+      [(ngModel)]="cantidad"
+      placeholder="Ingrese la cantidad"
+      min="0">
+
+    <label>Precio:</label>
+    <input
+      type="number"
+      [(ngModel)]="precio"
+      placeholder="Ingrese el precio"
+      min="0">
+
+    <button (click)="registrar()">Registrar producto</button>
+
+    <p class="mensaje">{{ mensaje }}</p>
+
+  </div>
+
+  <h2>Lista de productos</h2>
+
+  <div class="productos">
+
+    @for (producto of productos; track $index) {
+
+      <div class="producto">
+
+        <h3>{{ producto.nombre }}</h3>
+
+        <p>Cantidad: {{ producto.cantidad }}</p>
+
+        <p>Precio unitario: {{ producto.precio }}</p>
+
+        <p>
+          Valor total:
+          <strong>{{ producto.cantidad * producto.precio }}</strong>
+        </p>
+
+        <button class="eliminar" (click)="eliminar($index)">
+          Eliminar
+        </button>
+
+      </div>
+
+    } @empty {
+
+      <p class="vacio">No hay productos registrados</p>
+
+    }
+
+  </div>
+
+</div>

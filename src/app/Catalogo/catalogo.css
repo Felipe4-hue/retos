@@ -1,0 +1,50 @@
+.contenedor {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.producto {
+  background: #eeeeee;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.producto h2 {
+  color: #333;
+}
+
+.costoso {
+  display: inline-block;
+  background: #e74c3c;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.economico {
+  display: inline-block;
+  background: #27ae60;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+  .productos {
+    grid-template-columns: 1fr;
+  }
+}

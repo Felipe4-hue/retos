@@ -1,0 +1,36 @@
+<div class="contenedor">
+
+  <h1>Semáforo interactivo</h1>
+
+  <div class="semaforo">
+
+    <div
+      class="circulo"
+      [style.backgroundColor]="color">
+    </div>
+
+  </div>
+
+  <div class="botones">
+
+    <button class="rojo" (click)="rojo()">
+      Rojo
+    </button>
+
+    <button class="amarillo" (click)="amarillo()">
+      Amarillo
+    </button>
+
+    <button class="verde" (click)="verde()">
+      Verde
+    </button>
+
+  </div>
+
+  @if (mensaje !== '') {
+
+    <h2>{{ mensaje }}</h2>
+
+  }
+
+</div>
